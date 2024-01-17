@@ -1,1 +1,16 @@
+// Async function to fetch data from a remote server
+func fetchData() async throws -> String {
+ // Simulating an asynchronous operation, like a network request
+ await Task.sleep(2 * 1_000_000_000) // Sleep for 2 seconds
+ 
+ return "Data fetched successfully!"
+}
 
+// Example of using async/await
+func processAsyncData() async {
+ do {
+ let result = try await fetchData()
+ print(result)
+ } catch {
+ print("Error: \(error)")
+ }
